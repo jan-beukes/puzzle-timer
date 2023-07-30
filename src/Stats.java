@@ -28,12 +28,8 @@ public class Stats { // Handles all the statistics (Times, Averages, personal be
         timeFile = UserManager.currentUser.getTimeFile();
 
         BufferedReader reader = null;
-        // checks if the Puzzle Timer folder exists and if it does not creates it
-        try {
-            File theDir = new File(path);
-            if (!theDir.exists()) {
-                theDir.mkdirs();
-            }
+        
+        try{
 
             // Creates a csv file if it doesn't exists
             timeFile.createNewFile();

@@ -29,6 +29,12 @@ public class UserManager { //Manages the user system
         userList = new ArrayList<User>();
         usersDB = new File(PATH + "/UsersDB.accdb");
 
+        // checks if the Puzzle Timer folder exists and if it does not creates it
+            File theDir = new File(PATH);
+            if (!theDir.exists()) {
+                theDir.mkdirs();
+            }
+        
         if (!usersDB.exists()) { //creates the users database if it does not exist
             try {
                 DatabaseBuilder.create(Database.FileFormat.V2016, usersDB);
